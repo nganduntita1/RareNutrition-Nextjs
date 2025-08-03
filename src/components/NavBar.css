@@ -1,0 +1,133 @@
+@import url("e>https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&display=swap");
+
+.navBar {
+  --nav-height: 5rem;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  height: var(--nav-height);
+  overflow: clip;
+  padding-inline: 5vw;
+  justify-content: space-between;
+}
+
+.navBar .logo {
+  white-space: nowrap;
+}
+
+.navBar .logo .logo-main {
+  font-family: "Dancing script", cursive;
+  font-size: 30px;
+  position: relative;
+  bottom: -5px;
+}
+
+.navBar .logo .logo-sub {
+  font-family: "DM Sans";
+  font-size: 8px;
+  position: relative;
+  top: -5px;
+}
+
+.navBar .menu-btn {
+  color: var(--cl-main-light);
+}
+
+.navLinks {
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+  gap: 1.5rem;
+  width: auto;
+}
+
+.navLinks > li > a {
+  color: var(--cl-main-light);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navLinks > li > a:hover {
+  color: var(--cl-acc-light);
+}
+
+button.contact-btn:hover {
+  background-color: var(--cl-acc-light);
+  border-color: var(--cl-main-light);
+}
+
+body:has(.nav-cover) {
+  overflow: clip;
+}
+
+.nav-cover {
+  width: 100vw;
+  height: calc(100% - var(--nav-height));
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.77);
+  bottom: 0;
+  left: 0;
+  z-index: 5000;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  display: none;
+  padding: 2.5rem;
+}
+
+.navBar .menu-btn {
+  display: none;
+}
+
+/* @media screen and (max-width: 750px) {
+  .navLinks > li span {
+    display: none;
+  }
+} */
+
+@media screen and (max-width: 750px) {
+  .navBar > .navLinks,
+  .navBar > a:has(.contact-btn) {
+    display: none;
+  }
+
+  .navLinks > li span,
+  .navBar .menu-btn {
+    display: initial;
+  }
+
+  .nav-cover .menu-contact-btn {
+    display: block;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+
+  .nav-cover {
+    display: block;
+  }
+
+  .nav-cover .navLinks {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .nav-cover .navLinks button {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    color: var(--cl-main-light);
+    background-color: transparent;
+    border: 2px solid var(--cl-acc-light);
+  }
+
+  .nav-cover .navLinks button:hover {
+    background-color: var(--cl-acc-light);
+    color: var(--cl-main-dark);
+  }
+}

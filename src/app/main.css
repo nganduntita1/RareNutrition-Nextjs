@@ -1,0 +1,286 @@
+/* Fonts are now loaded via Next.js font system in layout.tsx */
+
+/* variables */
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1540,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --step--2: clamp(0.7813rem, 0.7763rem + 0.0246vw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9211rem + 0.082vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0922rem + 0.1639vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2943rem + 0.2787vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.5326rem + 0.4369vw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.8135rem + 0.6523vw, 2.4414rem);
+  --step-4: clamp(2.3328rem, 2.1442rem + 0.9429vw, 3.0518rem);
+  --step-5: clamp(2.7994rem, 2.533rem + 1.3316vw, 3.8147rem);
+
+  --cl-acc-light: #ffeada;
+  --cl-acc-dark: #5f4608;
+  --cl-acc-superlight: #fffaf7;
+  --cl-main-dark: black;
+  --cl-main-light: white;
+
+  --button-border-width: 1px;
+}
+
+/* default header and body styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-dm-sans), "Helvetica", "Gill Sans MT", "sans-serif";
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+nav a {
+  font-size: var(--step--2);
+}
+
+p {
+  font-size: var(--step-0);
+  width: min(65ch, 100%);
+  max-width: 65ch;
+  line-height: 200%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-dm-serif-display);
+  color: var(--cl-acc-dark);
+  line-height: 90%;
+}
+
+h1 {
+  font-size: var(--step-5);
+}
+
+h2,
+h3 {
+  font-size: var(--step-4);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--step-3);
+}
+
+div.lazy-img {
+  background-size: cover;
+  background-position: center;
+}
+
+div.lazy-img :has(.square-img) {
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
+}
+
+h2.page-heading {
+  line-height: 150%;
+  margin: initial;
+}
+
+.img-square-container {
+  border-radius: 1rem;
+  overflow: clip;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+button:not(.input) {
+  padding: 1em 1.5em;
+  min-width: 10em;
+  text-align: center;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 100ms;
+  white-space: nowrap;
+  outline: none;
+  font-weight: bold;
+  /* default colours */
+  border: var(--button-border-width) solid var(--cl-main-light);
+  background-color: var(--cl-main-light);
+  color: var(--cl-main-dark);
+}
+
+button.black {
+  border: var(--button-border-width) solid var(--cl-main-dark);
+  background-color: var(--cl-main-dark);
+  color: var(--cl-main-light);
+}
+
+button.black {
+  color: var(--cl-main-light);
+}
+
+button.dark {
+  border: var(--button-border-width) solid var(--cl-acc-dark);
+  background-color: var(--cl-acc-dark);
+  color: var(--cl-main-light);
+}
+
+button.light {
+  border: var(--button-border-width) solid var(--cl-acc-light);
+  background-color: var(--cl-acc-light);
+  color: var(--cl-main-dark);
+}
+
+button.bordered {
+  background-color: transparent;
+}
+
+button.black:hover {
+  background-color: var(--cl-main-light);
+}
+
+button.black:hover {
+  color: var(--cl-main-dark);
+}
+
+button.light:hover {
+  background-color: var(--cl-acc-superlight);
+  border-color: var(--cl-acc-dark);
+  color: var(--cl-main-dark);
+}
+
+button.dark:hover {
+  background-color: var(--cl-acc-light);
+  color: var(--cl-main-dark);
+}
+
+button.back {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  margin-inline: 1rem;
+}
+
+section {
+  width: 100vw;
+  padding: 3em min(5em, 10vw);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: inset 0px -10px 50px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+section.light {
+  background-color: var(--cl-acc-light);
+}
+
+section.dark {
+  background-color: var(--cl-acc-dark);
+}
+
+section.superlight {
+  background-color: var(--cl-acc-superlight);
+}
+
+section.double {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 10rem;
+  row-gap: 2rem;
+}
+
+section.double img.full-width,
+section.double > * {
+  width: clamp(200px, 100%, 65ch);
+}
+
+.square-img {
+  aspect-ratio: 1/1;
+}
+
+section.left {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+form.sort-filter {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input-container,
+button.input {
+  background-color: var(--cl-acc-light);
+  border-radius: 10px;
+  padding-inline: 0.5em;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+form.sort-filter .input-container:has(input[type="search"]) {
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+form.sort-filter .input-container input[type="search"] {
+  width: 30ch;
+}
+
+form.sort-filter button.input {
+  cursor: pointer;
+  min-width: 6em;
+}
+
+@media screen and (max-width: 500px) {
+  form.sort-filter button.input {
+    width: 2em;
+    min-width: 2.5em;
+  }
+
+  form.sort-filter .input-container input[type="search"] {
+    width: 15ch;
+  }
+
+  form.sort-filter button.input span {
+    display: none;
+  }
+}
+
+input {
+  background-color: var(--cl-acc-light);
+  font-size: var(--step--2);
+  height: 2.5em;
+  border: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--cl-acc-superlight);
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--cl-main-dark);
+}

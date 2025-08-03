@@ -1,0 +1,140 @@
+:root {
+  --height: 55vh;
+}
+
+footer {
+  background-color: var(--cl-main-dark);
+  color: var(--cl-main-light);
+  overflow: clip;
+  display: flex;
+  align-items: center;
+  min-height: var(--height);
+}
+
+@media screen and (max-height: 340px) {
+  :root {
+    --height: 100vh;
+  }
+}
+
+footer .fade-right {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%),
+    url("/images/anirudh-YQYacLW8o2U-unsplash.jpg");
+  height: calc(var(--height) + 5vh);
+  width: 50vw;
+  background-size: cover;
+}
+
+footer .details {
+  margin-left: var(--step-5);
+  z-index: 1;
+  padding-block: 2.5rem;
+  padding-inline: 0.5rem;
+}
+
+@media screen and (max-width: 370px) {
+  footer .details {
+    margin-left: 0;
+    margin-inline: auto;
+  }
+}
+
+footer .heading {
+  color: var(--cl-main-light);
+  margin-bottom: var(--step-2);
+}
+
+footer .detail_contact {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--step-2);
+}
+
+.detail_contact .contact-icon {
+  font-size: 1.5rem;
+}
+
+.detail_contact .info .label {
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.detail_contact .info span a {
+  color: var(--cl-main-light);
+  text-decoration: none;
+}
+
+.detail_contact .info span a:hover {
+  color: var(--cl-acc-dark);
+}
+
+.socials a i {
+  font-size: 1.5rem;
+  color: var(--cl-acc-superlight);
+  margin-right: 0.5rem;
+}
+
+.socials a i:hover {
+  color: var(--cl-acc-dark);
+}
+
+.extra-info,
+.disclaimer,
+.extra-info a {
+  color: var(--cl-main-light);
+  display: inline;
+}
+
+.extra-info a,
+.disclaimer {
+  color: var(--cl-acc-light);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.extra-info a:hover,
+.disclaimer:hover {
+  color: var(--cl-acc-dark);
+}
+
+@media screen and (max-width: 760px) {
+  footer .fade-right {
+    width: 100vw;
+    position: absolute;
+  }
+}
+
+.v-seperator {
+  font-weight: 500;
+  padding-inline: 1rem;
+}
+
+body:has(.disclaimer-cover) {
+  overflow: clip;
+}
+
+.disclaimer-cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.77);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+  padding: 1rem;
+}
+
+.disclaimer-container {
+  max-height: 90vh;
+}
+
+.close {
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  font-size: var(--step-2);
+}

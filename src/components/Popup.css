@@ -1,0 +1,64 @@
+body:has(.popup-container) {
+  overflow: hidden;
+}
+
+/* .popup-container {
+  display: none;
+} */
+
+:root {
+  --popup-time: 2s;
+}
+
+.popup-container {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.77);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: disappear 0s linear var(--popup-time) 1 normal forwards;
+}
+
+@keyframes disappear {
+  from {
+  }
+  to {
+    display: none;
+  }
+}
+
+.popup {
+  padding: 2.5rem 1.5rem;
+  background-color: var(--cl-acc-dark);
+  border: 2px solid var(--cl-acc-light);
+  box-shadow: 0px 0px 5px var(--cl-acc-light);
+  position: relative;
+  width: 20ch;
+  border-radius: 1rem;
+  overflow: clip;
+  color: var(--cl-acc-light);
+}
+
+.popup .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  border-radius: 0;
+  width: 100%;
+  background-color: var(--cl-acc-light);
+  animation: shrink var(--popup-time) linear 0s 1 normal forwards;
+}
+
+@keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}

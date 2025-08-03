@@ -1,0 +1,65 @@
+main.about section { 
+  gap: 5em; 
+  min-height: 0; 
+  height: fit-content; 
+  padding-block: 5em; 
+} 
+
+main.about article { 
+  align-self: center; 
+  display: grid; 
+  grid-template-columns: 1fr 2fr; 
+  gap: 2.5rem; 
+  justify-items: center; 
+} 
+
+main.about article p { 
+  max-width: 50ch; 
+} 
+
+main.about article p:first-child { 
+  margin-top: 0; 
+} 
+
+main.about section:nth-child(2n) article { 
+  direction: rtl; 
+} 
+
+main.about section:nth-child(2n) article .text { 
+  direction: ltr; 
+} 
+
+@media screen and (max-width: 930px) { 
+  main.about article { 
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); 
+  } 
+} 
+
+@media screen and (max-width: 430px) { 
+  main.about article { 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  } 
+} 
+
+main.about article div.image-container { 
+  width: min(20rem, 90vw); 
+  height: min(20rem, 90vw); 
+  overflow: clip; 
+  border-radius: 20px; 
+  border: 1px solid black; 
+} 
+
+main.about article div.image-container img { 
+  width: 100%; 
+  height: 100%; 
+  aspect-ratio: 1/1; 
+  object-fit: cover; 
+} 
+
+main.about blockquote { 
+  font-size: var(--step-1); 
+  color: var(--cl-acc-dark); 
+  font-weight: 500; 
+  text-align: center; 
+  margin: 0; 
+}
