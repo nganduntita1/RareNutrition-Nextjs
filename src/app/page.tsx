@@ -1,18 +1,33 @@
-import Head from 'next/head';
 import Link from 'next/link';
+import { Metadata } from 'next';
 import "./Home.css";
+
+export const metadata: Metadata = {
+  title: "Premium Supplements for Rare Diseases | Rare Nutrition",
+  description: "Expert-formulated supplements for rare diseases, epilepsy, autism, and specialized therapeutic diets. Personalized nutrition solutions with sugar-free, gluten-free, dairy-free supplements. Trusted by specialists worldwide.",
+  keywords: [
+    "rare disease supplements",
+    "personalized nutrition",
+    "therapeutic diet supplements",
+    "epilepsy nutrition support",
+    "autism supplements",
+    "specialized health supplements"
+  ],
+  alternates: {
+    canonical: "https://rarenutritions.netlify.app/",
+  },
+  openGraph: {
+    title: "Rare Nutrition - Premium Supplements for Rare Diseases",
+    description: "Expert-formulated supplements for rare diseases and specialized therapeutic diets. Personalized nutrition solutions.",
+    url: "https://rarenutritions.netlify.app/",
+    type: "website",
+    images: ["https://rarenutritions.netlify.app/images/hero-bg.png"],
+  },
+};
 
 export default function Home() {
   return (
     <main>
-      <Head>
-        <title>Rare Nutrition | Home</title>
-        <meta
-          name="description"
-          content="Welcome to Rare Nutrition, where we offer unique formulations for unique individuals. Explore our personalized supplements and targeted product range made with the highest-quality natural ingredients."
-        />
-        <link rel="canonical" href="https://rarenutritions.netlify.app/" />
-      </Head>
       <section className="hero">
         <div className="hero-bg">
           <div

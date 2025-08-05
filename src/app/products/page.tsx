@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import { products } from './productsData';
 import Card from '../../components/Card';
@@ -25,17 +24,7 @@ export default function Products() {
 
   return (
     <>
-      <Head>
-        <title>Rare Nutrition | Products</title>
-        <meta
-          name="description"
-          content="Explore our range of health and wellness products designed to support your journey to better health."
-        />
-        <link
-          rel="canonical"
-          href="https://rarenutritions.netlify.app/products"
-        />
-      </Head>
+
       <main>
         <section className="left">
           <h2 className="page-heading">Our products</h2>
@@ -43,11 +32,14 @@ export default function Products() {
           <div
             className="card-container product-container"
             onClick={(e) => {
-              if (e.target.closest(".card")) {
-                setSingleProduct(
-                  products[Number(e.target.closest(".card").dataset.id)]
-                );
-                setSingleProductVisible(true);
+              const target = e.target as HTMLElement;
+              const card = target.closest(".card") as HTMLElement;
+              if (card && card.dataset.id) {
+                const productId = parseInt(card.dataset.id);
+                if (!isNaN(productId) && products[productId]) {
+                  setSingleProduct(products[productId]);
+                  setSingleProductVisible(true);
+                }
               }
             }}
           >
