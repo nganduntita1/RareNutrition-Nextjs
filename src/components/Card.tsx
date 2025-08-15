@@ -25,12 +25,7 @@ const Card: FC<CardProps> = ({ id, img, title, description, tags }) => {
       <div
         className="lazy-img"
         style={{
-          backgroundImage:
-            "url(" +
-            img.slice(0, img.lastIndexOf(".")) +
-            "-small" +
-            img.slice(img.lastIndexOf(".")) +
-            ")",
+          backgroundImage: `url(${img})`,
         }}
       >
         <img loading="lazy" src={img} alt={title + " image"} />

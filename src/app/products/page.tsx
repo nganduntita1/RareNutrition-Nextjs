@@ -76,16 +76,7 @@ export default function Products() {
                       className="lazy-img"
                       style={{
                         backgroundImage:
-                          "url(" +
-                          singleProduct.img.slice(
-                            0,
-                            singleProduct.img.lastIndexOf(".")
-                          ) +
-                          "-small" +
-                          singleProduct.img.slice(
-                            singleProduct.img.lastIndexOf(".")
-                          ) +
-                          ")",
+                          `url(${singleProduct.img})`,
                       }}
                     >
                       <img
