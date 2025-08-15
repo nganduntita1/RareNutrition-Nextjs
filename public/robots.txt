@@ -21,7 +21,7 @@ Disallow: /_next/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://rarenutritions.netlify.app/sitemap.xml
+Sitemap: https://www.rarenutrition.co.za/sitemap.xml
 
 # Crawl delay for respectful crawling
 Crawl-delay: 1

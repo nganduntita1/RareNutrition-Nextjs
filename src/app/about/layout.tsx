@@ -18,12 +18,12 @@ export const metadata: Metadata = {
     "personalized nutrition company"
   ],
   alternates: {
-    canonical: "https://rarenutritions.netlify.app/about",
+    canonical: "https://www.rarenutrition.co.za/about",
   },
   openGraph: {
     title: "About Rare Nutrition - Specialists in Rare Disease Nutrition",
     description: "Discover Rare Nutrition's mission to provide expert-formulated supplements for rare diseases and specialized therapeutic diets. Trusted by specialists worldwide.",
-    url: "https://rarenutritions.netlify.app/about",
+    url: "https://www.rarenutrition.co.za/about",
     type: "website",
     images: ["https://rarenutritions.netlify.app/images/rare pic only.png"],
   },

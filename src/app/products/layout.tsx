@@ -18,12 +18,12 @@ export const metadata: Metadata = {
     "medical nutrition products"
   ],
   alternates: {
-    canonical: "https://rarenutritions.netlify.app/products",
+    canonical: "https://www.rarenutrition.co.za/products",
   },
   openGraph: {
     title: "Premium Supplements for Rare Diseases | Rare Nutrition",
     description: "Expert-formulated supplements for rare diseases and specialized therapeutic diets. Personalized nutrition solutions with high-quality ingredients.",
-    url: "https://rarenutritions.netlify.app/products",
+    url: "https://www.rarenutrition.co.za/products",
     type: "website",
     images: ["https://rarenutritions.netlify.app/images/products display.png"],
   },

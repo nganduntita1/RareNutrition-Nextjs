@@ -3,7 +3,7 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://rarenutritions.netlify.app/</loc>
+    <loc>https://www.rarenutrition.co.za/</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
   
   <!-- About Page -->
   <url>
-    <loc>https://rarenutritions.netlify.app/about</loc>
+    <loc>https://www.rarenutrition.co.za/about</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -19,7 +19,7 @@
   
   <!-- Products Page -->
   <url>
-    <loc>https://rarenutritions.netlify.app/products</loc>
+    <loc>https://www.rarenutrition.co.za/products</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -27,28 +27,28 @@
   
   <!-- Individual Product Pages -->
   <url>
-    <loc>https://rarenutritions.netlify.app/products/ketogenic-diet-supplements</loc>
+    <loc>https://www.rarenutrition.co.za/products/ketogenic-diet-supplements</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://rarenutritions.netlify.app/products/autism-supplements</loc>
+    <loc>https://www.rarenutrition.co.za/products/autism-supplements</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://rarenutritions.netlify.app/products/epilepsy-nutrition</loc>
+    <loc>https://www.rarenutrition.co.za/products/epilepsy-nutrition</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://rarenutritions.netlify.app/products/inborn-errors-metabolism</loc>
+    <loc>https://www.rarenutrition.co.za/products/inborn-errors-metabolism</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -56,7 +56,7 @@
   
   <!-- Did You Know Page -->
   <url>
-    <loc>https://rarenutritions.netlify.app/didyouknow</loc>
+    <loc>https://www.rarenutrition.co.za/didyouknow</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -64,7 +64,7 @@
   
   <!-- Cart Page -->
   <url>
-    <loc>https://rarenutritions.netlify.app/cart</loc>
+    <loc>https://www.rarenutrition.co.za/cart</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -72,7 +72,7 @@
   
   <!-- Checkout Page -->
   <url>
-    <loc>https://rarenutritions.netlify.app/checkout</loc>
+    <loc>https://www.rarenutrition.co.za/checkout</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

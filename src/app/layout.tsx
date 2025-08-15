@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     "preservative-free vitamins",
     "additive-free supplements"
   ],
-  authors: [{ name: "Rare Nutrition Team", url: "https://rarenutritions.netlify.app/" }],
+  authors: [{ name: "Rare Nutrition Team", url: "https://www.rarenutrition.co.za/" }],
   creator: "Rare Nutrition",
   publisher: "Rare Nutrition",
   robots: {
@@ -62,18 +62,18 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://rarenutritions.netlify.app/",
+    canonical: "https://www.rarenutrition.co.za/",
   },
   openGraph: {
     type: "website",
     locale: "en_ZA",
-    url: "https://rarenutritions.netlify.app/",
+    url: "https://www.rarenutrition.co.za/",
     siteName: "Rare Nutrition",
     title: "Rare Nutrition - Premium Supplements for Rare Diseases",
     description: "Expert-formulated supplements for rare diseases and specialized therapeutic diets. Trusted by specialists worldwide.",
     images: [
       {
-        url: "https://rarenutritions.netlify.app/images/hero-bg.png",
+        url: "https://www.rarenutrition.co.za/images/hero-bg.png",
         width: 1200,
         height: 630,
         alt: "Rare Nutrition - Premium Supplements",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rare Nutrition - Premium Supplements for Rare Diseases",
     description: "Expert-formulated supplements for rare diseases and specialized therapeutic diets. Trusted by specialists worldwide.",
-    images: ["https://rarenutritions.netlify.app/images/hero-bg.png"],
+    images: ["https://www.rarenutrition.co.za/images/hero-bg.png"],
     creator: "@rarenutrition",
   },
   verification: {
@@ -100,7 +100,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{ '--vh': '100px' }}>
+    <html lang="en">
       <head>
         <link rel="icon" type="image/svg+xml" href="./images/Icon/molecule-svgrepo-com_white.svg" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
@@ -117,9 +117,9 @@ export default function RootLayout({
               "name": "Rare Nutrition",
               "alternateName": "Rare Nutritions",
               "description": "Expert-formulated supplements for rare diseases, epilepsy, autism, and specialized therapeutic diets",
-              "url": "https://rarenutritions.netlify.app/",
-              "logo": "https://rarenutritions.netlify.app/images/hero-bg.png",
-              "image": "https://rarenutritions.netlify.app/images/hero-bg.png",
+              "url": "https://www.rarenutrition.co.za/",
+              "logo": "https://www.rarenutrition.co.za/images/hero-bg.png",
+              "image": "https://www.rarenutrition.co.za/images/hero-bg.png",
               "telephone": "+27-21-123-4567",
               "email": "info@rarenutrition.co.za",
               "address": {
@@ -167,12 +167,22 @@ export default function RootLayout({
                 ]
               },
               "sameAs": [
-                "https://rarenutritions.netlify.app/",
+                "https://www.rarenutrition.co.za/",
                 "https://www.rarenutrition.co.za/"
               ]
             })
           }}
         />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            function setVH() {
+              const vh = window.innerHeight * 0.01;
+              document.documentElement.style.setProperty('--vh', vh + 'px');
+            }
+            setVH();
+            window.addEventListener('resize', setVH);
+          `
+        }} />
       </head>
       <body
         className={`${dmSans.variable} ${dmSerifDisplay.variable} ${dancingScript.variable} antialiased`}
