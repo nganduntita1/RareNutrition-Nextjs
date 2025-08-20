@@ -1,5 +1,3 @@
-'use client';
-
 export default function ProductDetail() {
   return (
     <div>
@@ -7,4 +5,15 @@ export default function ProductDetail() {
       <p>This page is temporarily under maintenance.</p>
     </div>
   );
+}
+
+export function generateStaticParams() {
+  // Replace with your actual product IDs
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+    { id: '4' },
+    { id: '5' }
+  ];
 }
