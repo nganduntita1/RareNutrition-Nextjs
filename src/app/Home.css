@@ -19,7 +19,7 @@
 } 
 
 .hero-content { 
-  z-index: 1; 
+  z-index: 0; 
   display: flex; 
   align-items: center; 
   flex-direction: column; 
@@ -122,4 +122,14 @@ div:has(.didyouknow-img-container) {
 .btn-light {
   background-color: var(--cl-acc-light);
   color: var(--cl-main-dark);
+}
+
+@media screen and (max-width: 600px) {
+  .didyouknow {
+    padding: 1rem 0.1rem;
+  }
+}
+
+.footer-content {
+    z-index: 0;
 }
