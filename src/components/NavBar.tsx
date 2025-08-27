@@ -2,8 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import './NavBar.css';export default function NavBar() {
+import './NavBar.css';
+
+export default function NavBar() {
   const [navCoverVisible, setNavCoverVisible] = useState(false);
+
+  const handleNavClick = () => {
+    setNavCoverVisible(false); // close menu when user clicks
+  };
 
   return (
     <nav className="navBar">
@@ -14,35 +20,35 @@ import './NavBar.css';export default function NavBar() {
           SPECIALISED <b>NUTRITION</b>
         </span>
       </div>
+
       <ul className="navLinks">
         <li>
-          <Link href="/">
+          <Link href="/" onClick={handleNavClick}>
             <i className="fa-solid fa-home"></i>
             <span>Home</span>
           </Link>
         </li>
         <li>
-          <Link href="/about">
+          <Link href="/about" onClick={handleNavClick}>
             <i className="fa-solid fa-user"></i>
             <span>About</span>
           </Link>
         </li>
         <li>
-          <Link href="/products">
+          <Link href="/products" onClick={handleNavClick}>
             <i className="fa-solid fa-file-lines"></i>
             <span>Products</span>
           </Link>
         </li>
         <li>
-          <Link href="/didyouknow">
+          <Link href="/didyouknow" onClick={handleNavClick}>
             <i className="fa-solid fa-pills"></i>
             <span>Did you know</span>
           </Link>
         </li>
       </ul>
-      <a href="https://calendly.com/nganduntita" target="_blank" rel="noopener noreferrer">
-        <button className="contact-btn">Book Consultation</button>
-      </a>
+
+      {/* Removed Book Consultation button */}
 
       <button
         className="menu-btn light bordered"
@@ -58,7 +64,7 @@ import './NavBar.css';export default function NavBar() {
         <div className="nav-cover">
           <ul className="navLinks">
             <li>
-              <Link href="/">
+              <Link href="/" onClick={handleNavClick}>
                 <button>
                   <i className="fa-solid fa-home"></i>
                   <span>Home</span>
@@ -66,7 +72,7 @@ import './NavBar.css';export default function NavBar() {
               </Link>
             </li>
             <li>
-              <Link href="/about">
+              <Link href="/about" onClick={handleNavClick}>
                 <button>
                   <i className="fa-solid fa-user"></i>
                   <span>About</span>
@@ -74,7 +80,7 @@ import './NavBar.css';export default function NavBar() {
               </Link>
             </li>
             <li>
-              <Link href="/products">
+              <Link href="/products" onClick={handleNavClick}>
                 <button>
                   <i className="fa-solid fa-file-lines"></i>
                   <span>Products</span>
@@ -82,7 +88,7 @@ import './NavBar.css';export default function NavBar() {
               </Link>
             </li>
             <li>
-              <Link href="/didyouknow">
+              <Link href="/didyouknow" onClick={handleNavClick}>
                 <button>
                   <i className="fa-solid fa-pills"></i>
                   <span>Did you know</span>
@@ -90,9 +96,7 @@ import './NavBar.css';export default function NavBar() {
               </Link>
             </li>
           </ul>
-          <Link href="https://calendly.com/nganduntita">
-            <button className="light menu-contact-btn">Book Consultation</button>
-          </Link>
+          {/* Removed Book Consultation button */}
         </div>
       ) : null}
     </nav>

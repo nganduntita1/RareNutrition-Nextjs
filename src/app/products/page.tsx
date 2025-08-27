@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from "next/image";
 import { products } from './productsData';
 import Card from '../../components/Card';
 import Popup from '../../components/Popup';
@@ -79,10 +80,16 @@ export default function Products() {
                           `url(${singleProduct.img})`,
                       }}
                     >
-                      <img
-                        loading="lazy"
+                      <Image
                         src={singleProduct.img}
-                        alt={singleProduct.title + " image"}
+                        alt={`${singleProduct.title} image`}
+                        width={500} 
+                        height={500}
+                        priority={false} 
+                        quality={80} 
+                        sizes="(max-width: 768px) 100vw, 
+                              (max-width: 1200px) 50vw, 
+                              33vw"
                       />
                     </div>
                   </div>
@@ -91,7 +98,7 @@ export default function Products() {
                     <div className="details">
                       <h6>{singleProduct.title}</h6>
                       {singleProduct.description}
-                      {singleProduct.tags.length !== 0 && (
+                      {/* {singleProduct.tags.length !== 0 && (
                         <div className="tag-container">
                           {singleProduct.tags.map((tag, i) => (
                             <span className="tag" key={i}>
@@ -99,7 +106,7 @@ export default function Products() {
                             </span>
                           ))}
                         </div>
-                      )}
+                      )} */}
                     </div>
 
                     <div className="purchase-info">

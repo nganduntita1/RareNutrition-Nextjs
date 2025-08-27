@@ -193,7 +193,6 @@ export default function RootLayout({
         </main>
         <Footer />
         <script async data-uid="ad21b6ca0b" src="https://rarenutrition.kit.com/ad21b6ca0b/index.js"></script>
-        {/* <script async data-uid="626d19b17d" src="https://rarenutrition.kit.com/626d19b17d/index.js"></script> */}
       </body>
     </html>
   );

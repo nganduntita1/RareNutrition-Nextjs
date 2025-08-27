@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import "./Home.css";
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "Premium Supplements for Rare Diseases | Rare Nutrition",
@@ -14,14 +15,14 @@ export const metadata: Metadata = {
     "specialized health supplements"
   ],
   alternates: {
-    canonical: "https://www.rarenutrition.co.za/",
+    canonical: "",
   },
   openGraph: {
     title: "Rare Nutrition - Premium Supplements for Rare Diseases",
     description: "Expert-formulated supplements for rare diseases and specialized therapeutic diets. Personalized nutrition solutions.",
-    url: "https://www.rarenutrition.co.za/",
+    url: "",
     type: "website",
-    images: ["https://www.rarenutrition.co.za/images/hero-bg.png"]
+    images: [""]
   },
 };
 
@@ -36,11 +37,15 @@ export default function Home() {
               backgroundImage: 'url("/images/rare pic only-small.png")',
             }}
           >
-            <img
-              loading="lazy"
+            <Image
+              priority
               className="hero-bg-img"
               src="/images/hero-bg.png"
               alt="Background molecule image"
+              width={1920}
+              height={1080}
+              sizes="100vw"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>
         </div>
@@ -71,11 +76,15 @@ export default function Home() {
               backgroundImage: "url(/images/Products display-small.png)",
             }}
           >
-            <img
+            <Image
               loading="lazy"
               className="full-width"
               src="/images/Products display.png"
-              alt="Products displayed on a podium."
+              alt="Products display"
+              width={800}
+              height={600}
+              sizes="100vw"
+              style={{ width: '100%' }}
             />
           </div>
         </div>
