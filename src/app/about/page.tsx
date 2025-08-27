@@ -1,4 +1,5 @@
 import "./About.css";
+import Image from "next/image";
 
 export const metadata = {
   title: "Rare Nutrition | About",
@@ -20,10 +21,14 @@ export default function About() {
               className="lazy-img"
               style={{ backgroundImage: "url(/images/rare pic only-small.png)" }}
             >
-              <img
-                loading="lazy"
-                src="./images/rare pic only.png"
+              
+              <Image
+                src="/images/rare pic only.png"
                 alt="Logo molecule"
+                width={500}    // replace with actual width
+                height={500}   // replace with actual height
+                priority={true} // ✅ since this is a logo, load it immediately
+                quality={90}
               />
             </div>
           </div>

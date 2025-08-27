@@ -1,4 +1,6 @@
 import "../css/Didyouknow.css";
+import Image from "next/image";
+
 
 export default function Didyouknow1() {
   return (
@@ -9,10 +11,16 @@ export default function Didyouknow1() {
           backgroundImage: "url(./images/didyouknows/Didyouknow1-small.jpg)",
         }}
       >
-        <img
-          loading="lazy"
-          src="./images/didyouknows/Didyouknow1.jpeg"
+         <Image
+          src="/images/didyouknows/Didyouknow1.jpeg"
           alt="Autosomal recessive inheritance poster"
+          width={800}   // replace with actual width of the image
+          height={1200} // replace with actual height of the image
+          priority={false} // lazy-loads by default unless true
+          quality={80}
+          sizes="(max-width: 768px) 100vw, 
+                (max-width: 1200px) 50vw, 
+                33vw"
         />
       </div>
       <h6>What does it mean when a disorder is autosomal recessive?</h6>

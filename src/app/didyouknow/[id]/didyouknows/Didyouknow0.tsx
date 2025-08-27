@@ -1,4 +1,6 @@
 import '../../Didyouknow.css';
+import Image from "next/image";
+
 
 export default function Didyouknow0() {
   return (
@@ -10,10 +12,16 @@ export default function Didyouknow0() {
           backgroundImage: "url(/images/didyouknows/Didyouknow0-small.jpeg)",
         }}
       >
-        <img
-          loading="lazy"
+        <Image
           src="/images/didyouknows/Didyouknow0.jpeg"
           alt="Inborn Errors of Metabolism poster"
+          width={800}   // set the actual width of your image
+          height={1200} // set the actual height of your image
+          priority={false} // loads lazily by default, unless you set true
+          quality={80}  // tweak for performance (default is 75)
+          sizes="(max-width: 768px) 100vw, 
+                (max-width: 1200px) 50vw, 
+                33vw"
         />
       </div>
       <p>

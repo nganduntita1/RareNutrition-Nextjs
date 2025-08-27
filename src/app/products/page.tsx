@@ -52,7 +52,7 @@ export default function Products() {
                   img={product.img}
                   title={product.title}
                   description={product.description}
-                  tags={product.tags}
+                  // tags={product.tags}
                   price={product.price}
                 />
               );

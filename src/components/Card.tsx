@@ -32,7 +32,7 @@ const Card: FC<CardProps> = ({ id, img, title, description, tags }) => {
       </div>
       <h6>{title}</h6>
       <div className="description">{description}</div>
-      {tags.length !== 0 ? (
+      {/* {tags.length !== 0 ? (
         <div className="tag-container">
           {tags.map((tag, i) => {
             return (
@@ -44,7 +44,7 @@ const Card: FC<CardProps> = ({ id, img, title, description, tags }) => {
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </div>
   );
 };

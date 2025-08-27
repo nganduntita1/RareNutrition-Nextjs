@@ -56,7 +56,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
             <p>{product.description}</p>
             
             <div className="tag-container">
-              <p className="tag">{product.category}</p>
+              {/* <p className="tag">{product.category}</p> */}
               <p className="tag">Bestseller</p>
               <p className="tag">Organic</p>
             </div>
