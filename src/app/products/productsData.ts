@@ -77,7 +77,7 @@ export const products = [
     title: "L-Glycine 75g",
     description: "Pure pharmacy grade L-Glycine: A sweet tasting amino acid that conjugates isovaleric acid to be excreted in the urine.\n1g powder contains 750mg L-Glycine",
     tags: ["other"],
-    price: 100,
+    price: 120,
     stripeUrl: "https://buy.stripe.com/test_00w00ke4j3eg8Pvcnue3e08"
   },
   {
@@ -86,7 +86,7 @@ export const products = [
     title: "L-Carnitine 50g",
     description: "Pure pharmacy grade L-Carnitine: An amino acid necessary for converting fat into fuel. Also supports the liver.\n1g powder contains 500mg L-Carnitine",
     tags: ["other"],
-    price: 220,
+    price: 250,
     stripeUrl: "https://buy.stripe.com/test_9B6bJ29O37uwghX9bie3e09"
   },
   {
