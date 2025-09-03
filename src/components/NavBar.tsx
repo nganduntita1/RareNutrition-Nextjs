@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { CartIcon } from './CartIcon';
 import './NavBar.css';
 
 export default function NavBar() {
@@ -47,6 +48,10 @@ export default function NavBar() {
           </Link>
         </li>
       </ul>
+
+      <div className="flex items-center gap-4">
+        <CartIcon />
+      </div>
 
       {/* Removed Book Consultation button */}
 

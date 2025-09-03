@@ -1,5 +1,6 @@
 import './Card.css';
-import { FC } from 'react';
+import { FC, useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 type CardProps = {
   id: number;
@@ -7,9 +8,12 @@ type CardProps = {
   title: string;
   description: string;
   tags: string[];
+  price?: number;
+  showAddToCart?: boolean;
 };
 
-const Card: FC<CardProps> = ({ id, img, title, description, tags }) => {
+const Card: FC<CardProps> = ({ id, img, title, description, tags, price, showAddToCart = false }) => {
+  const { addToCart } = useContext(CartContext);
   return (
     <div
       className="card"
@@ -32,6 +36,23 @@ const Card: FC<CardProps> = ({ id, img, title, description, tags }) => {
       </div>
       <h6>{title}</h6>
       <div className="description">{description}</div>
+      {showAddToCart && (
+        <button 
+          className="add-to-cart" 
+          onClick={(e) => {
+            e.stopPropagation();
+            addToCart({
+              id,
+              name: title,
+              price: price ?? parseFloat(description.match(/R(\d+\.?\d*)/)?.[1] || '0'),
+              image: img,
+              quantity: 1
+            });
+          }}
+        >
+          Add to Cart
+        </button>
+      )}
       {/* {tags.length !== 0 ? (
         <div className="tag-container">
           {tags.map((tag, i) => {

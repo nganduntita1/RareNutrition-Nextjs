@@ -1,16 +1,18 @@
 'use client';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Link from 'next/link';
 import Image from "next/image";
 import { products } from './productsData';
 import Card from '../../components/Card';
 import Popup from '../../components/Popup';
+import { CartContext } from '../../context/CartContext';
 import './Products.css';
 
 export default function Products() {
   const [singleProduct, setSingleProduct] = useState(products[0]);
   const [singleProductVisible, setSingleProductVisible] = useState(false);
   const [displayPopup, setDisplayPopup] = useState(false);
+  const { addToCart } = useContext(CartContext);
 
   function resetSingleProductCover() {
     setSingleProductVisible(false);
@@ -58,7 +60,7 @@ export default function Products() {
               );
             })}
 
-            {displayPopup && <Popup text="Your order was placed successfully" />}
+            {displayPopup && <Popup text="Your order was added to cart successfully" />}
           </div>
 
           {singleProductVisible && (
@@ -114,20 +116,23 @@ export default function Products() {
                         <span className="price">R{singleProduct.price}</span>
                       </div>
                       <div className="row">
-                        {singleProduct.stripeUrl ? (
-                          <button
-                            className="buy-now-stripe dark"
-                            onClick={() => {
-                              window.open(singleProduct.stripeUrl, "_blank");
-                            }}
-                          >
-                            Buy Now
-                          </button>
-                        ) : (
-                          <button className="buy-now-stripe dark" disabled>
-                            Not Available
-                          </button>
-                        )}
+                        <button 
+                          className="add-to-cart" 
+                          onClick={() => {
+                            addToCart({
+                              id: singleProduct.id,
+                              name: singleProduct.title,
+                              price: singleProduct.price,
+                              image: singleProduct.img,
+                              quantity: 1
+                            });
+                            showPopup();
+                            resetSingleProductCover();
+                          }}
+                        >
+                          Add to Cart
+                        </button>
+                        
                       </div>
                       <div className="row">
                         <i className="fa-solid fa-truck"></i>

@@ -118,3 +118,19 @@
   font-size: var(--step--2);
   margin: 0;
 }
+
+.card .add-to-cart {
+  background-color: var(--cl-acc-dark);
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  margin: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.card .add-to-cart:hover {
+  background-color: var(--cl-acc-light);
+  color: var(--cl-main-dark);
+}
