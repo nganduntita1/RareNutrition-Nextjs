@@ -5,8 +5,8 @@ This document provides instructions for testing the Yoco payment integration in 
 
 ## Test Environment
 The integration is currently set up with Yoco test credentials:
-- Public Key: `pk_test_7813b32f49KwGevf3cf4`
-- Secret Key: `sk_test_64749f941eZ8qoV0a674cd9b2c6a`
+- Public Key: `your_public_key_here`
+- Secret Key: `your_secret_key_here`
 
 ## Testing the Payment Flow
 

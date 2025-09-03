@@ -5,7 +5,7 @@
  * Handles interactions with Yoco Payment Gateway
  */
 
-const YOCO_PUBLIC_KEY = 'pk_test_7813b32f49KwGevf3cf4';
+const YOCO_PUBLIC_KEY = process.env.NEXT_PUBLIC_YOCO_PUBLIC_KEY;
 const YOCO_API_URL = 'https://payments.yoco.com/api/checkouts';
 
 interface CheckoutResponse {

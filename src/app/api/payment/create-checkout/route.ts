@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const YOCO_SECRET_KEY = 'sk_test_64749f941eZ8qoV0a674cd9b2c6a';
+const YOCO_SECRET_KEY = process.env.YOCO_SECRET_KEY;
 const YOCO_API_URL = 'https://payments.yoco.com/api/checkouts';
 
 export async function POST(request: NextRequest) {
