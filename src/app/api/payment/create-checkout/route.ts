@@ -3,6 +3,9 @@ import { NextRequest, NextResponse } from 'next/server';
 const YOCO_SECRET_KEY = process.env.YOCO_SECRET_KEY;
 const YOCO_API_URL = 'https://payments.yoco.com/api/checkouts';
 
+// Check if we're using live keys (live keys start with 'sk_live_' or 'pk_live_')
+const isUsingLiveKeys = YOCO_SECRET_KEY?.startsWith('sk_live_');
+
 export async function POST(request: NextRequest) {
   try {
     const { amount, currency, idempotencyKey } = await request.json();
@@ -25,8 +28,12 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         amount,
         currency,
-        successUrl: `${request.nextUrl.origin}/checkout/success`,
-        cancelUrl: `${request.nextUrl.origin}/checkout/cancel`,
+        successUrl: isUsingLiveKeys 
+          ? `${request.nextUrl.origin}/checkout/success`.replace('http://', 'https://')
+          : `${request.nextUrl.origin}/checkout/success`,
+        cancelUrl: isUsingLiveKeys 
+          ? `${request.nextUrl.origin}/checkout/cancel`.replace('http://', 'https://')
+          : `${request.nextUrl.origin}/checkout/cancel`,
       }),
     });
 
